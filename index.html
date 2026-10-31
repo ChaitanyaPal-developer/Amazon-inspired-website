@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate-ON</title>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #e2e7e6;
+            color: #0f1111;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            min-height: 70px;
+            background-color: #131921;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 10px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-logo {
+            height: 50px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            background-image: url("amazon logo.webp");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 50px;
+            width: 100%;
+        }
+
+        .border {
+            border: 2px solid transparent;
+            padding: 5px;
+        }
+
+        .border:hover {
+            border: 2px solid white;
+        }
+
+        /* LOCATION */
+
+        .nav-address {
+            padding: 5px;
+        }
+
+        .add-first {
+            color: #cccccc;
+            font-size: 0.8rem;
+            margin-left: 15px;
+        }
+
+        .add-icon {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .class-second {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        /* SEARCH BAR */
+
+        .nav-search {
+            display: flex;
+            background-color: #febd69;
+            width: 45%;
+            max-width: 620px;
+            height: 40px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .nav-search:hover {
+            outline: 2px solid orange;
+        }
+
+        .search-select {
+            background-color: #f3f3f3;
+            width: 55px;
+            border: none;
+            text-align: center;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 0;
+            font-size: 1rem;
+            border: none;
+            outline: none;
+            padding: 10px;
+        }
+
+        .search-icon {
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #0f1111;
+            cursor: pointer;
+        }
+
+        /* ACCOUNT AND ORDERS */
+
+        .sign-in,
+        .sign-return {
+            cursor: pointer;
+        }
+
+        .sign-in span,
+        .sign-return span {
+            font-size: 0.75rem;
+        }
+
+        .nav-second {
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* CART */
+
+        .nav-cart {
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .nav-cart i {
+            font-size: 26px;
+        }
+
+        /* SECOND NAVBAR */
+
+        .panel {
+            min-height: 40px;
+            display: flex;
+            background-color: #222f3d;
+            color: white;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        .panel-all {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .panel-ops {
+            width: 65%;
+            font-size: 0.85rem;
+        }
+
+        .panel-ops p {
+            display: inline-block;
+            margin-left: 25px;
+            cursor: pointer;
+        }
+
+        .panel-ops p:hover {
+            text-decoration: underline;
+        }
+
+        .panel-deals {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* HERO SECTION */
+
+        .hero-section {
+            background-image: url("pic1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .hero-message {
+            background-color: white;
+            color: black;
+            min-height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.85rem;
+            width: 85%;
+            margin-bottom: 25px;
+            padding: 10px;
+        }
+
+        .hero-message a {
+            color: #007185;
+            cursor: pointer;
+        }
+
+        /* SHOP SECTION */
+
+        .shop-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+            background-color: #e2e7e6;
+        }
+
+        .box {
+            min-height: 400px;
+            background-color: white;
+            padding: 20px 15px;
+            margin-top: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .box-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .box-content h2 {
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .box-img {
+            height: 300px;
+            width: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom: 15px;
+        }
+
+        .box-content p {
+            color: #007185;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .box-content p:hover {
+            color: #c45500;
+            text-decoration: underline;
+        }
+
+        /* EXTRA COLLECTION */
+
+        .extra-section {
+            padding: 20px;
+            background-color: #e2e7e6;
+        }
+
+        .extra-box {
+            background-color: white;
+            padding: 20px;
+        }
+
+        .extra-box h2 {
+            margin-bottom: 15px;
+        }
+
+        .extra-box img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 20px;
+            background-color: #222f3d;
+            color: white;
+        }
+
+        .back-to-top {
+            background-color: #37475a;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .back-to-top:hover {
+            background-color: #485769;
+        }
+
+        .footer-content {
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin: 10px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media(max-width: 1000px) {
+            .shop-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-search {
+                width: 40%;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .navbar {
+                justify-content: space-between;
+            }
+
+            .nav-search {
+                width: 100%;
+                max-width: 100%;
+                order: 5;
+            }
+
+            .nav-address {
+                display: none;
+            }
+
+            .panel-ops {
+                width: 100%;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .panel-ops p {
+                margin: 5px;
+            }
+
+            .panel-deals {
+                display: none;
+            }
+
+            .hero-section {
+                height: 280px;
+            }
+
+            .shop-section {
+                grid-template-columns: 1fr;
+                padding: 12px;
+            }
+
+            .box {
+                min-height: 380px;
+            }
+
+            .box-img {
+                height: 280px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <!-- MAIN NAVBAR -->
+
+        <div class="navbar">
+
+            <div class="nav-logo border">
+                <div class="logo"></div>
+            </div>
+
+            <div class="nav-address border">
+                <p class="add-first">Deliver to</p>
+
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="class-second">India</p>
+                </div>
+            </div>
+
+            <!-- SEARCH -->
+
+            <div class="nav-search">
+
+                <select class="search-select">
+                    <option>All</option>
+                    <option>Products</option>
+                    <option>Collections</option>
+                </select>
+
+                <input
+                    type="text"
+                    placeholder="Search Ultimate-ON"
+                    class="search-input"
+                    id="searchInput"
+                >
+
+                <div class="search-icon" onclick="searchProducts()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+            </div>
+
+            <!-- SIGN IN -->
+
+            <div class="sign-in border">
+                <p><span>Hello, sign in</span></p>
+                <p class="nav-second">Accounts & Lists</p>
+            </div>
+
+            <!-- RETURNS -->
+
+            <div class="sign-return border">
+                <p><span>Returns</span></p>
+                <p class="nav-second">& Orders</p>
+            </div>
+
+            <!-- CART -->
+
+            <div class="nav-cart border">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart
+            </div>
+
+        </div>
+
+        <!-- SECOND NAVBAR -->
+
+        <div class="panel">
+
+            <div class="panel-all">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+
+            <div class="panel-ops">
+                <p>Today's Deals</p>
+                <p>Customer Service</p>
+                <p>Registry</p>
+                <p>Gift Cards</p>
+                <p>Sell</p>
+            </div>
+
+            <div class="panel-deals">
+                Shop deals in Electronics
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- HERO SECTION -->
+
+    <div class="hero-section">
+
+        <div class="hero-message">
+
+            <p>
+                You are on Ultimate-ON.
+                Explore our featured collections and discover more.
+                <a href="#shop">Click here to explore</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- SHOP SECTION -->
+
+    <main>
+
+        <div class="shop-section" id="shop">
+
+            <!-- BOX 1 -->
+
+            <div class="box box1">
+
+                <div class="box-content">
+
+                    <h2>Sports Glasses</h2>
+
+                    <div
+                        class="box-img"
+                        style="background-image: url('pic5.jpg');">
+                    </div>
+
+                    <p>See more</p>
+
+                </div>
+
+            </div>
+
+            <!-- BOX 2 -->
+
+            <div class="box box2">
+
+                <div class="box-content">
+
+                    <h2>Explore Collections</h2>
+
+                    <div
+                        class="box-img"
+                        style="background-image: url('pic2.jpg');">
+                    </div>
+
+                    <p>Discover more</p>
+
+                </div>
+
+            </div>
+
+            <!-- BOX 3 -->
+
+            <div class="box box3">
+
+                <div class="box-content">
+
+                    <h2>Featured Products</h2>
+
+                    <div
+                        class="box-img"
+                        style="background-image: url('pic3.jpg');">
+                    </div>
+
+                    <p>Shop now</p>
+
+                </div>
+
+            </div>
+
+            <!-- BOX 4 -->
+
+            <div class="box box4">
+
+                <div class="box-content">
+
+                    <h2>Style Collection</h2>
+
+                    <div
+                        class="box-img"
+                        style="background-image: url('pic4.jpg');">
+                    </div>
+
+                    <p>Explore more</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOX 5 -->
+
+        <div class="extra-section">
+
+            <div class="extra-box">
+
+                <h2>More to Explore</h2>
+
+                <img src="pic6.jpg" alt="More products">
+
+                <p>Discover our collection.</p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="back-to-top"
+             onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+
+            Back to top
+
+        </div>
+
+        <div class="footer-content">
+
+            <h2>Ultimate-ON</h2>
+
+            <p>Explore our collections and discover more.</p>
+
+            <p>Thank you for visiting Ultimate-ON!</p>
+
+            <p>&copy; 2026 Ultimate-ON. All rights reserved.</p>
+
+        </div>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function searchProducts() {
+
+            let input = document
+                .getElementById("searchInput")
+                .value.toLowerCase();
+
+            let boxes = document.querySelectorAll(".box");
+
+            boxes.forEach(function(box) {
+
+                let text = box.innerText.toLowerCase();
+
+                if (text.includes(input)) {
+                    box.style.display = "block";
+                } else {
+                    box.style.display = "none";
+                }
+
+            });
+
+        }
+
+        document
+            .getElementById("searchInput")
+            .addEventListener("input", searchProducts);
+
+    </script>
+
+</body>
+</html>
